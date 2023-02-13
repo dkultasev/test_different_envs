@@ -1,0 +1,21 @@
+name: Test environments
+
+on:
+  workflow_dispatch:
+    inputs:
+      list_of_emails:
+        description: 'Enter some value'
+        required: true
+
+
+jobs:
+  add-account-to-whitelist:
+    name: Export tables
+    runs-on: self-hosted-base
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+      - name: Init ENV file
+        shell: 'script -q -e -c "bash {0}"'
+        run: |
+            echo "AAAAAAAAAAAAAAAAAAAAAAAAAAA"
