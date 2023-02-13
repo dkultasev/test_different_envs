@@ -6,7 +6,9 @@ on:
       list_of_emails:
         description: 'Enter some value'
         required: true
-
+      environment:
+        type: environment
+        description: 'Environment'
 
 jobs:
   add-account-to-whitelist:
@@ -18,4 +20,4 @@ jobs:
       - name: Init ENV file
         shell: 'script -q -e -c "bash {0}"'
         run: |
-            echo "AAAAAAAAAAAAAAAAAAAAAAAAAAA"
+            echo "AAAAAAAAAAAAAAAAAAAAAAAAAAA ${{ vars.ENV }} AAAAAAAAAAAAAAAAAAAAAAAAAAA"
