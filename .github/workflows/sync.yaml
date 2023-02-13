@@ -18,8 +18,8 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
       - name: Init ENV file
+        if: ${{ vars.ENV == 'PROD' }}
         shell: 'script -q -e -c "bash {0}"'
         run: |
-            echo "AAAAAAAAAAAAAAAAAAAAAAAAAAA ${{ vars.E_VARIABLE }} AAAAAAAAAAAAAAAAAAAAAAAAAAA"
-        env:
-          E_VARIABLE: ${{ vars.E_VARIABLE }}
+            echo "AAAAAAAAAAAAAAAAAAAAAAAAAAA PROD AAAAAAAAAAAAAAAAAAAAAAAAAAA"
+
