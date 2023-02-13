@@ -20,6 +20,6 @@ jobs:
       - name: Init ENV file
         shell: 'script -q -e -c "bash {0}"'
         run: |
-            echo "AAAAAAAAAAAAAAAAAAAAAAAAAAA ${{ vars.ENV }} AAAAAAAAAAAAAAAAAAAAAAAAAAA"
+            echo "AAAAAAAAAAAAAAAAAAAAAAAAAAA ${{ vars.E_VARIABLE }} AAAAAAAAAAAAAAAAAAAAAAAAAAA"
         env:
-          ENV: ${{ vars.ENV }}
+          E_VARIABLE: ${{ vars.E_VARIABLE }}
