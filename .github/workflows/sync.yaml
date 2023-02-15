@@ -12,7 +12,7 @@ jobs:
     name: Export tables
     runs-on: ubuntu-latest
     env:
-      EEE: ${{vars.ENV}}
+      EEE: ${{env.ENV}}
     steps:
       - name: Checkout source code
         uses: actions/checkout@v3
