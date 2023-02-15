@@ -9,8 +9,21 @@ on:
 
 jobs:
   add-account-to-whitelist:
-    environment: PROD, STG
     name: Export tables
+    environment: PROD
+    runs-on: ubuntu-latest
+    env:
+      EEE: ${{vars.ENV}}
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+      - name: Init ENV file
+        shell: 'script -q -e -c "bash {0}"'
+        run: |
+            echo "AAAAAAAAAAAAAAAAAAAAAAAAAAA ${{env.EEE}} AAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  add-account-to-whitelist2:
+    name: Export tables
+    environment: STG
     runs-on: ubuntu-latest
     env:
       EEE: ${{vars.ENV}}
@@ -22,3 +35,10 @@ jobs:
         run: |
             echo "AAAAAAAAAAAAAAAAAAAAAAAAAAA ${{env.EEE}} AAAAAAAAAAAAAAAAAAAAAAAAAAA"
 
+# Defaults: &defaults
+#   Company: foo
+#   Item: 123
+
+# Computer:
+#   <<: *defaults
+#   Price: 3000
