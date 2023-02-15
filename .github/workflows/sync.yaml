@@ -10,7 +10,7 @@ on:
 jobs:
   some-job:
     name: Export tables
-    environment: PROD
+    environment: ${{inputs.environment}}
     runs-on: ubuntu-latest
     steps:
       - name: Echo environment name
