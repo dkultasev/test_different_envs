@@ -9,6 +9,7 @@ on:
 
 jobs:
   add-account-to-whitelist:
+    environment: PROD
     name: Export tables
     runs-on: ubuntu-latest
     env:
