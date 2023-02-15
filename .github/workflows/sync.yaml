@@ -3,9 +3,6 @@ name: Test environments
 on:
   workflow_dispatch:
     inputs:
-      list_of_emails:
-        description: 'Enter some value'
-        required: true
       environment:
         type: environment
         description: 'Environment'
@@ -14,12 +11,13 @@ jobs:
   add-account-to-whitelist:
     name: Export tables
     runs-on: ubuntu-latest
+    env:
+      EEE: ${{vars.ENV}}
     steps:
       - name: Checkout source code
         uses: actions/checkout@v3
       - name: Init ENV file
-        if: ${{ vars.ENV == 'PROD' }}
         shell: 'script -q -e -c "bash {0}"'
         run: |
-            echo "AAAAAAAAAAAAAAAAAAAAAAAAAAA PROD AAAAAAAAAAAAAAAAAAAAAAAAAAA"
+            echo "AAAAAAAAAAAAAAAAAAAAAAAAAAA $EEE AAAAAAAAAAAAAAAAAAAAAAAAAAA"
 
