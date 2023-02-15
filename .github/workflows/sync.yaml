@@ -8,33 +8,13 @@ on:
         description: 'Environment'
 
 jobs:
-  add-account-to-whitelist:
+  some-job:
     name: Export tables
     environment: PROD
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout source code
-        uses: actions/checkout@v3
-      - name: Init ENV file
+      - name: Echo environment name
         shell: 'script -q -e -c "bash {0}"'
         run: |
-            echo "AAAAAAAAAAAAAAAAAAAAAAAAAAA ${{vars.ENV}} AAAAAAAAAAAAAAAAAAAAAAAAAAA"
-  add-account-to-whitelist2:
-    name: Export tables
-    environment: STG
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout source code
-        uses: actions/checkout@v3
-      - name: Init ENV file
-        shell: 'script -q -e -c "bash {0}"'
-        run: |
-            echo "AAAAAAAAAAAAAAAAAAAAAAAAAAA ${{vars.ENV}} AAAAAAAAAAAAAAAAAAAAAAAAAAA"
+            echo "Environment in use: ${{vars.ENV}}"
 
-# Defaults: &defaults
-#   Company: foo
-#   Item: 123
-
-# Computer:
-#   <<: *defaults
-#   Price: 3000
