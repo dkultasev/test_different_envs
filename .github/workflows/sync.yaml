@@ -19,5 +19,5 @@ jobs:
       - name: Init ENV file
         shell: 'script -q -e -c "bash {0}"'
         run: |
-            echo "AAAAAAAAAAAAAAAAAAAAAAAAAAA $EEE AAAAAAAAAAAAAAAAAAAAAAAAAAA"
+            echo "AAAAAAAAAAAAAAAAAAAAAAAAAAA ${{env.EEE}} AAAAAAAAAAAAAAAAAAAAAAAAAAA"
 
